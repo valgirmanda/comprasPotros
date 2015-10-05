@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+  
+ <hibernate-mapping>  
+  <class name="com.potros.entities.RenglonCarrito" table="Detalle">  
+    <id column="IDCOMPRA" name="id" >  
+     	<generator class="identity"></generator>  
+    </id> 
+    <property column="CANTIDAD" name="cantidad" ></property> 
+    <component class="com.potros.entities.Articulo" name="articulo" >
+    	<property column="CVEDEPARTAMENTO" name="iddepartamento" ></property>
+    </component>
+  </class>  
+            
+ </hibernate-mapping>  

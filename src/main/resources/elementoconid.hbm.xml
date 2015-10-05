@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+  
+ <hibernate-mapping>  
+  <class name="com.potros.entities.ElementoConId" table="elementoConId">  
+    <id column="ID" name="id" >  
+     	<generator class="identity"></generator>  
+    </id> 
+    <property column="DESCRIPCION" name="descripcion" ></property> 
+     <joined-subclass name="com.potros.entities.Usuario" table="Usuarios" extends="com.potros.entities.ElementoConId">
+	    <key column="ID"/>
+	    <property column="PASSWORD" name="password" ></property> 
+	    <property column="EDAD" name="edad" ></property> 
+	    <component class="com.potros.entities.Nombre" name="nombre" >
+	    	<property column="NOMBREDEPILA" name="nombreDePila" ></property>  
+		    <property column="APELLIDOPATERNO" name="apellidoPaterno" ></property> 
+		    <property column="APELLIDOMATERNO" name="apellidoMaterno" ></property> 
+	    </component>
+    </joined-subclass>
+    <joined-subclass name="com.potros.entities.Articulo" table="Articulos">
+	    <key column="ID"/>
+	    <property column="CVEDEPARTAMENTO" name="iddepartamento" ></property>
+    </joined-subclass>
+    <joined-subclass name="com.potros.entities.Departamento" table="Departamentos">
+	    <key column="ID"/>
+	    <component class="com.potros.entities.Articulo" name="articulo" >
+	    	 <property column="CVEDEPARTAMENTO" name="iddepartamento" ></property>
+	    </component>
+    </joined-subclass>
+  </class>  
+            
+ </hibernate-mapping>  
