@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+  
+ <hibernate-mapping>  
+  	<union-subclass name="com.potros.entities.Articulo" table="Articulos" extends="com.potros.entities.ElementoConId">  
+   	 	<property column="CVEDEPARTAMENTO" name="iddepartamento" ></property>
+   	 	<property column="PRECIO" name="precio" ></property>
+    </union-subclass>  
+ </hibernate-mapping>  
