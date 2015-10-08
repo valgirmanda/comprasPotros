@@ -104,7 +104,7 @@ public class PotrosMain {
 		System.out.println();
 		*/
 		
-		
+		/*
 		//CREA LA TABLA USUARIO CON EL OBJETO NAME 
 		Configuration cfg=new Configuration();  
 	    cfg.configure("hibernate.cfg.xml");//populates the data of the configuration file  
@@ -122,7 +122,7 @@ public class PotrosMain {
 		
 		
 	
-		
+		*/
 		//PRUEBA USUARIOCONID
 		Articulo art = new Articulo("Articulo 1",3.5,10);
 		art.setIddepartamento(4);
@@ -139,7 +139,6 @@ public class PotrosMain {
 					"\n"+a.getPrecio()+
 					"\n"+a.getId());
 		}
-		
 		
 		/*
 		//Compra

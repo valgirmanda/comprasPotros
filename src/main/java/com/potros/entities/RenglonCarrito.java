@@ -3,16 +3,16 @@ package com.potros.entities;
 public class RenglonCarrito{
 	private Articulo articulo;
 	private Integer cantidad;
-	private Integer idCompra;
+	private Integer id;
 	
 	
 	
-	public Integer getIdCompra() {
-		return idCompra;
+	public Integer getId() {
+		return id;
 	}
 
-	public void setIdCompra(Integer idCompra) {
-		this.idCompra = idCompra;
+	public void setId(Integer id) {
+		this.id= id;
 	}
 
 	public Articulo getArticulo() {
