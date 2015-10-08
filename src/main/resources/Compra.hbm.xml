@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>  
+<!DOCTYPE hibernate-mapping PUBLIC  
+ "-//Hibernate/Hibernate Mapping DTD 3.0//EN"  
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">  
+  
+ <hibernate-mapping>  
+  <class name="com.potros.entities.Compra" table="Compras">  
+    <id column="IDCOMPRA" name="idCompra" >  
+     	<generator class="identity"></generator>  
+    </id> 
+    <property column="FECHA" name="fecha" ></property> 
+    <list name="datos" cascade="all">  
+	     <key column="IDCOMPRA"></key>  
+	     <index column="ORDEN"></index>  
+	     <one-to-many class="com.potros.entities.RenglonCarrito" />
+   	</list>  
+  </class>        
+ </hibernate-mapping>  
