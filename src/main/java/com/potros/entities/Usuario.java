@@ -20,8 +20,8 @@ public class Usuario extends ElementoConId implements Serializable {
 		this.edad = edad;
 	}
 	
-	public Nombre getNombre() {
-		return nombre;
+	public String getNombre() {
+		return nombre.getNombreDePila();
 	}
 
 	public void setNombre(Nombre nombre) {

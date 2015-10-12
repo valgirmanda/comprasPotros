@@ -3,6 +3,7 @@ package com.potros.logic;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,6 +22,8 @@ public class UserValidate extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
+	
+	UsuarioDAO userDAO;
     public UserValidate() {
         super();
         // TODO Auto-generated constructor stub
@@ -36,7 +39,7 @@ public class UserValidate extends HttpServlet {
 		//Configuration cfg=new Configuration();  
 		System.out.println("validar "+usuario+" pass "+password);
 	    //cfg.configure("hibernate.cfg.xml");//populates the data of the configuration file 
-		UsuarioDAO userDAO = new UsuarioDAO();
+		
 		List<Usuario> usuarios = userDAO.findAll();
 		if(usuarios != null){
 			for(Usuario u : usuarios){
@@ -52,11 +55,11 @@ public class UserValidate extends HttpServlet {
 					}
 					System.out.println("si esta?");
 					//redireccionar a la pagina de compra
-					response.sendRedirect("Login.jsp");		
+					response.sendRedirect("inicio.jsp");		
 				}
 			}
 		}
-		response.sendRedirect("Registro.jsp");
+		response.sendRedirect("notPass.jsp");
 
 	}
 
@@ -66,6 +69,13 @@ public class UserValidate extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request,response);
+	}
+
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		// TODO Auto-generated method stub
+		super.init(config);
+		userDAO = new UsuarioDAO();
 	}
 
 }

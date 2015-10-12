@@ -1,6 +1,8 @@
 package com.potros.logic;
 
 import java.io.IOException;
+
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,6 +21,8 @@ public class RegistrarUsuario extends HttpServlet {
     /**
      * @see HttpServlet#HttpServlet()
      */
+	UsuarioDAO uDao;
+	
     public RegistrarUsuario() {
         super();
         // TODO Auto-generated constructor stub
@@ -45,10 +49,10 @@ public class RegistrarUsuario extends HttpServlet {
 		System.out.println(nom+ap+am+edad+nick+pass);
 		Usuario nuevo;
 		nuevo = new Usuario(nick,new Nombre(nom,ap,am),pass,Integer.parseInt(edad));
-		UsuarioDAO uDao = new UsuarioDAO();
+		
 		uDao.persist(nuevo);
 		//redireccionar a la pagina principal despues del registro
-		response.sendRedirect("Principal");
+		response.sendRedirect("Login.jsp");
 	}
 
 	/**
@@ -57,6 +61,13 @@ public class RegistrarUsuario extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+	}
+
+	@Override
+	public void init(ServletConfig config) throws ServletException {
+		// TODO Auto-generated method stub
+		super.init(config);
+		uDao = new UsuarioDAO();
 	}
 
 }

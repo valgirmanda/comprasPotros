@@ -80,7 +80,7 @@ public abstract class GenericDAO<T> {
 	}
 
 	public List<T> findAll() {
-		Query q = session.createQuery("from Articulo");
+		Query q = session.createQuery("from Usuario");
 		List<T> resultList = (List<T>) q.list();
 		return resultList;
 	}
