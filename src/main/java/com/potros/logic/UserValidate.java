@@ -39,28 +39,24 @@ public class UserValidate extends HttpServlet {
 		//Configuration cfg=new Configuration();  
 		System.out.println("validar "+usuario+" pass "+password);
 	    //cfg.configure("hibernate.cfg.xml");//populates the data of the configuration file 
-		
-		List<Usuario> usuarios = userDAO.findAll();
-		if(usuarios != null){
-			for(Usuario u : usuarios){
+		Usuario u = userDAO.Autenticar(usuario, password);
+		if(u!=null){
 				System.out.println("usuario "+u.getNombre()+" pass "+u.getPassword());
 				if(u.getNombre().equals(usuario) && u.getPassword().equals(password)){
 					HttpSession s=request.getSession(true);
-					if(s.isNew()){
-						s.setAttribute("usuario", usuario);
-					}else{
-						if(!s.getAttribute("nombre").equals(usuario)){
-							s.setAttribute("usuario", usuario);
-						}
-					}
+					s.setAttribute("usuario", usuario);
+					
 					System.out.println("si esta?");
 					//redireccionar a la pagina de compra
-					response.sendRedirect("inicio.jsp");		
+					response.sendRedirect("inicio.jsp");	
+					
+				}else{
+					response.sendRedirect("notPass.jsp");
 				}
-			}
+			
+		}else{
+			response.sendRedirect("notPass.jsp");
 		}
-		response.sendRedirect("notPass.jsp");
-
 	}
 
 	/**
