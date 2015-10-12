@@ -12,7 +12,7 @@
     <body>
         <div class="container">
 
-      <form class="form-signin" action="RegistrarUsuario">
+      <form class="form-signin" action="RegistrarUsuario" method="POST">
         <h2 class="form-signin-heading">Registro</h2>
           <hr>
         <p>

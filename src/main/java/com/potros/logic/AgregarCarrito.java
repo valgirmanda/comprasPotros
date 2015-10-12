@@ -24,12 +24,14 @@ public class AgregarCarrito extends HttpServlet {
      */
     public AgregarCarrito() {
         super();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		int idArticulo = Integer.parseInt(request.getParameter("idArticulo"));
 		ArticuloDAO aDao = new ArticuloDAO();
 		Articulo articulo = aDao.findById(idArticulo);
@@ -46,6 +48,7 @@ public class AgregarCarrito extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doGet(request,response);
 	}
 
