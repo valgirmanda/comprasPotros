@@ -1,30 +1,33 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
-
+<?xml version="1.0" encoding="UTF-8"?>
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+  	<servlet-name>UsrValidate</servlet-name>
+  	<display-name>UsrValidate</display-name>
+  	<description>Validación de usuario</description>
+  	<servlet-class>com.potros.logic.UsrValidate</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UserValidate</servlet-name>
+  	<display-name>UserValidate</display-name>
+  	<description>Validación de usuario</description>
+  	<servlet-class>com.potros.logic.UserValidate</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AgregarCarrito</servlet-name>
+  	<display-name>AgregarCarrito</display-name>
+  	<description>Agregar items al carrito de compra</description>
+  	<servlet-class>com.potros.logic.AgregarCarrito</servlet-class>
+  </servlet>
   <servlet>
   	<servlet-name>RegistrarUsuario</servlet-name>
   	<display-name>RegistrarUsuario</display-name>
   	<description></description>
   	<servlet-class>com.potros.logic.RegistrarUsuario</servlet-class>
   </servlet>
-  <servlet>
-  	<servlet-name>UserValidate</servlet-name>
-  	<display-name>UserValidate</display-name>
-  	<description>Validar usuario</description>
-  	<servlet-class>com.potros.logic.UserValidate</servlet-class>
-  </servlet>
-  <servlet>
-  	<servlet-name>AgregarCarrito</servlet-name>
-  	<display-name>AgregarCarrito</display-name>
-  	<description>Agrega item al carrito</description>
-  	<servlet-class>com.potros.logic.AgregarCarrito</servlet-class>
-  </servlet>
   <servlet-mapping>
-  	<servlet-name>RegistrarUsuario</servlet-name>
-  	<url-pattern>/RegistrarUsuario</url-pattern>
+  	<servlet-name>UsrValidate</servlet-name>
+  	<url-pattern>/UsrValidate</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
   	<servlet-name>UserValidate</servlet-name>
@@ -33,5 +36,9 @@
   <servlet-mapping>
   	<servlet-name>AgregarCarrito</servlet-name>
   	<url-pattern>/AgregarCarrito</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>RegistrarUsuario</servlet-name>
+  	<url-pattern>/RegistrarUsuario</url-pattern>
   </servlet-mapping>
 </web-app>

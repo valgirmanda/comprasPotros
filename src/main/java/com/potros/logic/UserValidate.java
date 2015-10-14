@@ -10,7 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.potros.entities.Departamento;
 import com.potros.entities.Usuario;
+import com.potros.persistence.DepartamentoDAO;
+import com.potros.persistence.GenericDAO;
 import com.potros.persistence.UsuarioDAO;
 
 /**
@@ -39,21 +42,28 @@ public class UserValidate extends HttpServlet {
 		//Configuration cfg=new Configuration();  
 		System.out.println("validar "+usuario+" pass "+password);
 	    //cfg.configure("hibernate.cfg.xml");//populates the data of the configuration file 
-		Usuario u = userDAO.Autenticar(usuario, password);
-		if(u!=null){
+		 DepartamentoDAO gd = new DepartamentoDAO();
+		 List<Departamento> ld=gd.findAll();
+		 
+			List<Usuario> usuarios = userDAO.findAll();
+		if(usuarios!=null){
+			for(Usuario u:usuarios){
 				System.out.println("usuario "+u.getNombre()+" pass "+u.getPassword());
-				if(u.getNombre().equals(usuario) && u.getPassword().equals(password)){
+				if(u.getDescripcion().equals(usuario) && u.getPassword().equals(password)){
 					HttpSession s=request.getSession(true);
 					s.setAttribute("usuario", usuario);
-					
+					s.setAttribute("departamento0", ((Departamento)ld.get(0)).getDescripcion());
+					s.setAttribute("departamento1", ((Departamento)ld.get(1)).getDescripcion());
+					//s.setAttribute("departamento3", ld.get(3));
 					System.out.println("si esta?");
 					//redireccionar a la pagina de compra
 					response.sendRedirect("inicio.jsp");	
-					
+					break;
 				}else{
 					response.sendRedirect("notPass.jsp");
+					break;
 				}
-			
+			}
 		}else{
 			response.sendRedirect("notPass.jsp");
 		}

@@ -7,7 +7,7 @@
 <!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="en"> <!--<![endif]-->
 <head>
-
+	<h1>Bienvenido <%out.println(session.getAttribute("usuario"));%></h1>
     <!-- Basic Page Needs
   ================================================== -->
 	<meta charset="utf-8">
@@ -101,6 +101,7 @@
 	<div class="zerogrid">
 		<div class="col-2-3">
 			<div id="main-content">
+			
 				<div class="row">
 					<div class="col-1-2">
 						<div class="wrap-col">
@@ -108,7 +109,7 @@
 								<img class="full" src="images/img01.jpg">
 								<div class="wrap-art">
 									<div class="art-header">
-										<h1 class="title"><a href="single.html">A Blue Morning</a></h1>
+										<h1 class="title"><a href="single.html"><%out.println(session.getAttribute("departamento0"));%></a></h1>
 									</div>
 									<div class="art-content">
 										<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
@@ -146,7 +147,7 @@
 								<img class="full" src="images/img02.jpg">
 								<div class="wrap-art">
 									<div class="art-header">
-										<h1 class="title"><a href="single.html">A Blue Morning</a></h1>
+										<h1 class="title"><a href="single.html"><%out.println(session.getAttribute("departamento1"));%></a></h1>
 									</div>
 									<div class="art-content">
 										<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
@@ -182,7 +183,7 @@
 								<img class="full" src="images/img03.jpg">
 								<div class="wrap-content">
 									<div class="art-header">
-										<h1 class="title"><a href="single.html">Wind</a></h1>
+										<h1 class="title"><a href="single.html">otro</a></h1>
 									</div>
 									<div class="art-content">
 										<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,

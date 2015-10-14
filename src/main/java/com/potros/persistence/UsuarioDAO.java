@@ -11,6 +11,10 @@ public class UsuarioDAO extends GenericDAO<Usuario> {
 	
 	private Session session = HibernateUtil.getSessionFactory().openSession();
 
+	public UsuarioDAO(){
+		this.clase="Usuario";
+	}
+	
 	public Usuario Autenticar(String usuario, String pass){
 		Usuario u=null;
 		String sql = "SELECT * FROM Usuarios WHERE DESCRIPCION = :descripcion and PASSWORD = :password";

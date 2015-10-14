@@ -12,6 +12,9 @@ import com.potros.exception.InvalidDataException;
 import com.potros.exception.UserNotFoundException;
 
 public abstract class GenericDAO<T> {
+	
+	
+	protected java.lang.String clase;
 	protected final Class<?> clazz = this.getClazz();
 
 	public abstract Class<?> getClazz();
@@ -80,7 +83,7 @@ public abstract class GenericDAO<T> {
 	}
 
 	public List<T> findAll() {
-		Query q = session.createQuery("from Usuario");
+		Query q = session.createQuery("from "+clase);
 		List<T> resultList = (List<T>) q.list();
 		return resultList;
 	}
