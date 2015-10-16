@@ -44,16 +44,21 @@ public class UserValidate extends HttpServlet {
 	    //cfg.configure("hibernate.cfg.xml");//populates the data of the configuration file 
 		 DepartamentoDAO gd = new DepartamentoDAO();
 		 List<Departamento> ld=gd.findAll();
-		 
+		 Usuario user = userDAO.Autenticar(usuario, password);
 			List<Usuario> usuarios = userDAO.findAll();
 		if(usuarios!=null){
 			for(Usuario u:usuarios){
-				System.out.println("usuario "+u.getNombre()+" pass "+u.getPassword());
+				System.out.println("usuario "+u.getNombre().getNombreDePila()+" pass "+u.getPassword());
 				if(u.getDescripcion().equals(usuario) && u.getPassword().equals(password)){
 					HttpSession s=request.getSession(true);
 					s.setAttribute("usuario", usuario);
-					s.setAttribute("departamento0", ((Departamento)ld.get(0)).getDescripcion());
-					s.setAttribute("departamento1", ((Departamento)ld.get(1)).getDescripcion());
+					int i=0;
+					for(Departamento d : ld){
+						s.setAttribute("departamento"+i, d.getDescripcion());
+						i++;
+					}
+					//s.setAttribute("departamento0", ((Departamento)ld.get(0)).getDescripcion());
+					//s.setAttribute("departamento1", ((Departamento)ld.get(1)).getDescripcion());
 					//s.setAttribute("departamento3", ld.get(3));
 					System.out.println("si esta?");
 					//redireccionar a la pagina de compra

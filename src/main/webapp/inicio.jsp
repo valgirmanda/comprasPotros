@@ -101,7 +101,7 @@
 	<div class="zerogrid">
 		<div class="col-2-3">
 			<div id="main-content">
-			
+			<% %>
 				<div class="row">
 					<div class="col-1-2">
 						<div class="wrap-col">
@@ -183,7 +183,7 @@
 								<img class="full" src="images/img03.jpg">
 								<div class="wrap-content">
 									<div class="art-header">
-										<h1 class="title"><a href="single.html">otro</a></h1>
+										<h1 class="title"><a href="single.html"><%out.println(session.getAttribute("departamento2"));%></a></h1>
 									</div>
 									<div class="art-content">
 										<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
