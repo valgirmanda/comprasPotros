@@ -2,16 +2,17 @@ package com.potros.persistence;
 
 import com.potros.entities.Articulo;
 import com.potros.entities.Compra;
+import com.potros.entities.Departamento;
 
-public class CompraDAO extends GenericDAO<Compra>{
+public class DepartamentoDAO extends GenericDAO<Departamento>{
 	
-	public CompraDAO(){
-		this.clase="Compra";
+	public DepartamentoDAO(){
+		this.clase="Departamento";
 	}
 	@Override
 	public Class getClazz() {
 		// TODO Auto-generated method stub
-		return Compra.class;
+		return Departamento.class;
 	}
 
 }
