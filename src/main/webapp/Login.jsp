@@ -1,5 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.util.Date"%>
+<%@ page import="java.text.SimpleDateFormat"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 <head>
@@ -14,7 +15,7 @@
       <div class="container">
 
       <form class="form-signin" action="UserValidate" method="POST">
-        <h2 class="form-signin-heading">Login :)</h2>
+        <h2 class="form-signin-heading">Login :) <%= new SimpleDateFormat("MM/dd/yyyy").format(new Date())%></h2>
         <label for="inputNick" class="sr-only">Nick</label>
         <input type="text" name="inputNick" id="inputNick" class="form-control" placeholder="Nick" required autofocus>
         <label for="inputPassword" class="sr-only">Contraseña</label>

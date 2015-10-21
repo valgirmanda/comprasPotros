@@ -7,11 +7,11 @@
 <!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="en"> <!--<![endif]-->
 <head>
-	<h1>Bienvenido <%out.println(session.getAttribute("usuario"));%></h1>
+	<h1>Bienvenido ${usuario}</h1>
     <!-- Basic Page Needs
   ================================================== -->
 	<meta charset="utf-8">
-	<title>zAvada Free Responsive Html5 Templates</title>
+	<title>Palacio del Potro</title>
 	<meta name="description" content="Free Responsive Html5 Css3 Templates | zerotheme.com">
 	<meta name="author" content="www.zerotheme.com">
 	
@@ -44,34 +44,7 @@
 <body>
 <div class="wrap-body">
 <!--------------Header--------------->
-<div class="top-header">
-	<div class="zerogrid">
-		<div class="row">
-			<nav>
-			  <a class="toggleMenu" href="#">Menu</a>
-			  <ul class="menu">
-				  <li><a href="index.html">Home</a></li>
-				  <li>
-					  <a href="single.html" class="parent">Categories</a>
-					  <ul>
-						  <li><a href="single.html">Menu 1001</a></li>
-						  <li><a href="single.html">Menu 1002</a></li>
-						  <li>
-						  	<a href="single.html" class="parent">Menu 1003</a>
-							<ul>
-								<li><a href="single.html">Menu 2001</a></li>
-						  		<li><a href="single.html">Menu 2002</a></li>
-							</ul>
-						  </li>
-					  </ul>
-				  </li>
-				  <li><a href="single.html">About</a></li>
-				  <li><a href="contact.html">Contact Us</a></li>
-			  </ul>
-			</nav>
-		</div>
-	</div>
-</div>
+<%@include file="menu.jsp"%>
 <header>
 	<div class="wrap-header">
 		<div class="zerogrid">
