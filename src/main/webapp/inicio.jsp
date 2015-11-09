@@ -7,7 +7,7 @@
 <!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="en"> <!--<![endif]-->
 <head>
-	<h1>Bienvenido ${usuario}</h1>
+	<h1>Bienvenido ${user.nombre.nombreDePila}</h1>
     <!-- Basic Page Needs
   ================================================== -->
 	<meta charset="utf-8">
@@ -324,6 +324,8 @@
 							<div class="clear"></div>
 						</div>
 						<div class="wid-content">
+						<jsp:useBean id="user" scope="session" class="com.potros.entities.Usuario"></jsp:useBean>
+							<a href="#">Edad = <jsp:getProperty property="edad" name="user"/> ,</a>
 							<a href="#">animals ,</a>
 							<a href="#">cooking ,</a>
 							<a href="#">countries ,</a>

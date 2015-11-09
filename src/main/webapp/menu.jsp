@@ -21,6 +21,7 @@
 				  </li>
 				  <li><a href="single.html">About</a></li>
 				  <li><a href="contact.html">Contact Us</a></li>
+				  <li><a href="Logout.jsp">Log out</a></li>
 			  </ul>
 			</nav>
 		</div>
